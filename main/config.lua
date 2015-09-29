@@ -1,0 +1,10 @@
+local M = {}
+
+M.PLAYER_ACCELERATION = 65
+M.PLAYER_FRICTION = 8
+
+M.GRAVITY = 30 
+
+
+return M
+
