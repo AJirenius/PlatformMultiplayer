@@ -1,0 +1,33 @@
+local config = require "main.config"
+local player_state = require "player.player_state"
+local player_anim_state = require "player.player_anim_state"
+
+
+local function play_anim(self, anim)
+	if self.anim_state == anim then return end
+	self.anim_state = anim
+	spine.play("#spinemodel", self.anim_state, go.PLAYBACK_LOOP_FORWARD, 0.2)
+end
+
+function init(self)
+	self.anim_state = nil
+	play_anim(self,player_anim_state.IDLE)
+end
+
+function update(self, dt)
+    local state = go.get("#physics", "state")
+    local speed_x = math.abs(go.get("#physics", "speed_x"))
+    
+    if state == player_state.FALLING then
+		play_anim(self,player_anim_state.IDLE)
+    else
+    	if speed_x < config.SPEED_ANIMATIONS[1] then
+			play_anim(self,player_anim_state.IDLE)
+    	elseif speed_x < config.SPEED_ANIMATIONS[2] then
+			play_anim(self,player_anim_state.WALK)
+    	else
+			play_anim(self,player_anim_state.RUN)
+    	end
+    end
+end
+
