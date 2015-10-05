@@ -1,0 +1,62 @@
+local config = require "main.config"
+
+
+go.property("speed", 800)
+go.property("angle",0)
+
+local STATE_FLYING = 1
+local STATE_STUCK = 2
+local msg_contact_point_response = hash("contact_point_response")
+local msg_animation_done = hash("animation_done")
+
+local function angle_to_vector(angle, magnitude)
+	local v = vmath.vector3(magnitude*math.cos(angle),magnitude*math.sin(angle),0)
+	return v
+end
+
+local function vector_to_angle(v)
+	local angle = math.atan2(v.y, v.x)
+    if angle < 0 then angle = angle + math.pi * 2 end
+    return angle;
+end
+
+local function change_state(self, new_state)
+	if self.state == new_state then return end
+	self.state = new_state
+	if self.state == STATE_FLYING then
+	
+	elseif self.state == STATE_STUCK then 
+		self.speed = 0
+		particlefx.stop("#particlefx")
+		--go.delete()
+	end
+end
+
+function init(self)
+    change_state(self, STATE_FLYING)
+    self.direction =  angle_to_vector(self.angle , self.speed)
+    particlefx.play("#particlefx")
+end
+
+function update(self, dt)
+	if self.state == STATE_FLYING then
+		self.angle = vector_to_angle(self.direction)
+		go.set_rotation(vmath.quat_rotation_z(self.angle))
+		
+		self.direction.y = self.direction.y - config.ARROW_GRAVITY * dt 
+		if self.direction.y > config.ARROW_MAX_FALL_SPEED then self.direction.y = config.ARROW_MAX_FALL_SPEED end
+		local pos = go.get_position()
+		pos.x = pos.x + self.direction.x * dt
+		pos.y = pos.y + self.direction.y * dt
+		go.set_position(pos)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == msg_contact_point_response then
+    	if message.group == hash("level") then
+    		change_state(self, STATE_STUCK)
+    	end
+    end 
+end
+

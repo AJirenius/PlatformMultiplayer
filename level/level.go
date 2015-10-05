@@ -23,6 +23,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"level\"\n"
   "mask: \"player\"\n"
+  "mask: \"player_arrow\"\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"

@@ -1,89 +1,11 @@
 images {
-  image: "/gfx/gfx/eye_indifferent.png"
+  image: "/gfx/gfx/arrow.png"
 }
 images {
-  image: "/gfx/gfx/eye_surprised.png"
+  image: "/gfx/gfx/lensflare0.png"
 }
 images {
-  image: "/gfx/gfx/flag.png"
-}
-images {
-  image: "/gfx/gfx/front_bracer.png"
-}
-images {
-  image: "/gfx/gfx/front_fist_closed.png"
-}
-images {
-  image: "/gfx/gfx/front_fist_open.png"
-}
-images {
-  image: "/gfx/gfx/front_foot.png"
-}
-images {
-  image: "/gfx/gfx/front_foot_bend1.png"
-}
-images {
-  image: "/gfx/gfx/front_foot_bend2.png"
-}
-images {
-  image: "/gfx/gfx/front_shin.png"
-}
-images {
-  image: "/gfx/gfx/front_thigh.png"
-}
-images {
-  image: "/gfx/gfx/front_upper_arm.png"
-}
-images {
-  image: "/gfx/gfx/goggles.png"
-}
-images {
-  image: "/gfx/gfx/gun.png"
-}
-images {
-  image: "/gfx/gfx/head.png"
-}
-images {
-  image: "/gfx/gfx/mouth_grind.png"
-}
-images {
-  image: "/gfx/gfx/mouth_oooo.png"
-}
-images {
-  image: "/gfx/gfx/mouth_smile.png"
-}
-images {
-  image: "/gfx/gfx/muzzle.png"
-}
-images {
-  image: "/gfx/gfx/neck.png"
-}
-images {
-  image: "/builtins/graphics/particle_blob.png"
-}
-images {
-  image: "/gfx/gfx/rear_bracer.png"
-}
-images {
-  image: "/gfx/gfx/rear_foot.png"
-}
-images {
-  image: "/gfx/gfx/rear_foot_bend1.png"
-}
-images {
-  image: "/gfx/gfx/rear_foot_bend2.png"
-}
-images {
-  image: "/gfx/gfx/rear_shin.png"
-}
-images {
-  image: "/gfx/gfx/rear_thigh.png"
-}
-images {
-  image: "/gfx/gfx/rear_upper_arm.png"
-}
-images {
-  image: "/gfx/gfx/torso.png"
+  image: "/gfx/gfx/aim.png"
 }
 margin: 0
 extrude_borders: 0

@@ -7,10 +7,54 @@ key_trigger {
   action: "left"
 }
 key_trigger {
+  input: KEY_UP
+  action: "up"
+}
+key_trigger {
+  input: KEY_DOWN
+  action: "down"
+}
+key_trigger {
   input: KEY_SPACE
   action: "jump"
 }
 key_trigger {
   input: KEY_LSHIFT
   action: "fire"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_RIGHT
+  action: "fire"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_LEFT
+  action: "fire"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_UP
+  action: "triangle"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_DOWN
+  action: "jump"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_LEFT
+  action: "left"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_RIGHT
+  action: "right"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_DOWN
+  action: "down"
+}
+gamepad_trigger {
+  input: GAMEPAD_LSTICK_UP
+  action: "up"
+}
+gamepad_trigger {
+  input: GAMEPAD_RPAD_DOWN
+  action: "unnamed"
 }
