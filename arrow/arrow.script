@@ -27,7 +27,6 @@ local function change_state(self, new_state)
 	
 	elseif self.state == STATE_STUCK then 
 		self.speed = 0
-		particlefx.stop("#particlefx")
 		--go.delete()
 	end
 end
@@ -35,7 +34,6 @@ end
 function init(self)
     change_state(self, STATE_FLYING)
     self.direction =  angle_to_vector(self.angle , self.speed)
-    particlefx.play("#particlefx")
 end
 
 function update(self, dt)
