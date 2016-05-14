@@ -4,6 +4,7 @@ version = 0.1
 
 [bootstrap]
 main_collection = /main/main.collectionc
+render = /main/render/default.renderc
 
 [input]
 game_binding = /input/game.input_bindingc
@@ -14,8 +15,8 @@ clear_color_red = 0.3
 clear_color_blue = 0.3
 
 [display]
-width = 800
-height = 600
+width = 1136
+height = 640
 variable_dt = 1
 
 [physics]

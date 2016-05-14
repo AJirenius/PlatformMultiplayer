@@ -1,5 +1,5 @@
 components {
-  id: "particlefx"
+  id: "fx"
   component: "/arrow/arrow_streak.particlefx"
   position {
     x: 0.0
@@ -38,6 +38,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"player_arrow\"\n"
   "mask: \"level\"\n"
+  "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

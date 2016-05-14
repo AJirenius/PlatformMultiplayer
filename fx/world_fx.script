@@ -1,0 +1,5 @@
+go.property("url",msg.url("#fx_jump"))
+
+function init(self)
+    particlefx.play(self.url)
+end

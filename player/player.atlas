@@ -7,6 +7,9 @@ images {
 images {
   image: "/gfx/gfx/aim.png"
 }
+images {
+  image: "/gfx/gfx/streakflare.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

@@ -1,0 +1,21 @@
+local msg_update = hash("update")
+
+function init(self)
+    self.nodes = {
+    	{
+    		name = gui.get_node("name_1"),
+    		nr_arrows = gui.get_node("nr_arrows_1"),
+    	},
+    	{
+    		name = gui.get_node("name_2"),
+    		nr_arrows = gui.get_node("nr_arrows_2"),
+    	},
+    }
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == msg_update then
+    	if message.nr_arrows then gui.set_text(self.nodes[message.player_id].nr_arrows, message.nr_arrows) end
+    	if message.name then gui.set_text(self.nodes[message.player_id].name, message.name) end
+    end
+end

@@ -1,9 +1,29 @@
 name: "main"
 instances {
+  id: "hud"
+  prototype: "/gui/hud.go"
+  position {
+    x: 475.67642
+    y: 471.37436
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
   id: "level"
   prototype: "/level/level.go"
   position {
-    x: 0.0
+    x: 10.0
     y: 0.0
     z: 0.0
   }
@@ -20,13 +40,13 @@ instances {
   }
 }
 instances {
-  id: "player"
+  id: "player_1"
   prototype: "/player/player.go"
-  children: "aim"
-  children: "bow"
+  children: "aim_1"
+  children: "bow_1"
   position {
-    x: 315.3167
-    y: 459.4913
+    x: 86.53531
+    y: 487.28787
     z: 0.0
   }
   rotation {
@@ -35,6 +55,14 @@ instances {
     z: 0.0
     w: 1.0
   }
+  component_properties {
+    id: "player"
+    properties {
+      id: "player_id"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 1.0
     y: 1.0
@@ -42,7 +70,7 @@ instances {
   }
 }
 instances {
-  id: "aim"
+  id: "aim_1"
   prototype: "/player/aim.go"
   position {
     x: 0.0
@@ -61,13 +89,150 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "player_2"
+  prototype: "/player/player.go"
+  children: "aim_2"
+  children: "bow_2"
+  position {
+    x: 921.0022
+    y: 513.681
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "player"
+    properties {
+      id: "player_id"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "aim_2"
+  prototype: "/player/aim.go"
+  position {
+    x: 0.0
+    y: 12.186698
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "world_fx"
+  prototype: "/fx/world_fx.go"
+  position {
+    x: 436.97122
+    y: 485.57086
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
-  id: "arrow_factory"
+  id: "cam"
+  data: "components {\n"
+  "  id: \"cam\"\n"
+  "  component: \"/main/cam.camera\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/main/cam.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "factories"
   data: "embedded_components {\n"
-  "  id: \"factory\"\n"
+  "  id: \"arrow\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/arrow/arrow.go\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"world_fx\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/fx/world_fx.go\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -100,7 +265,27 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "bow"
+  id: "bow_1"
+  data: ""
+  position {
+    x: 0.0
+    y: 13.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "bow_2"
   data: ""
   position {
     x: 0.0

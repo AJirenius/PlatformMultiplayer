@@ -1,4 +1,34 @@
 components {
+  id: "fx_dash_left"
+  component: "/player/fx/dash_left.particlefx"
+  position {
+    x: 0.0
+    y: 12.164214
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "fx_dash_right"
+  component: "/player/fx/dash_right.particlefx"
+  position {
+    x: 0.0
+    y: 12.164214
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
   id: "player"
   component: "/player/player.script"
   position {
@@ -14,7 +44,7 @@ components {
   }
 }
 embedded_components {
-  id: "feet"
+  id: "collision"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
   "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
@@ -23,12 +53,13 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"player\"\n"
   "mask: \"level\"\n"
+  "mask: \"player_arrow\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
   "      x: 0.0\n"
-  "      y: 12.2791605\n"
+  "      y: 11.0\n"
   "      z: 0.0\n"
   "    }\n"
   "    rotation {\n"
@@ -41,7 +72,7 @@ embedded_components {
   "    count: 3\n"
   "  }\n"
   "  data: 11.0\n"
-  "  data: 12.5\n"
+  "  data: 11.5\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
