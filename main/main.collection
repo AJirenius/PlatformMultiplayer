@@ -46,7 +46,7 @@ instances {
   children: "bow_1"
   position {
     x: 86.53531
-    y: 487.28787
+    y: 319.17554
     z: 0.0
   }
   rotation {
@@ -96,7 +96,7 @@ instances {
   children: "bow_2"
   position {
     x: 921.0022
-    y: 513.681
+    y: 317.55
     z: 0.0
   }
   rotation {
